@@ -72,10 +72,10 @@ class heap {
 
     private: 
     //Private data members and private functions are yet to be filled in
-        int hcapacity;
-        int currentsize;
-        vector<nodeObject> heapdata;
-        hashTable *hashptr;
+        int hcapacity; //heap capacity
+        int currentsize; //current size of heap
+        vector<nodeObject> heapdata; //named heapdata, nodeObject is below
+        hashTable *hashptr; //pointer to element in the heap
         
         class nodeObject {
             string hashid;
