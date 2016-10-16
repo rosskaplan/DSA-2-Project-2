@@ -10,12 +10,6 @@ heap.o: heap.cpp heap.h
 hash.o: hash.cpp hash.h
 	g++ -c hash.cpp
 
-all: hash.cpp hash.h heap.cpp useHeap.cpp
-	make hash.o
-	make heap.o
-	make useHeap.o
-	make useHeap.exe
-
 debug:
 	g++ -g -o useHeapDebug.exe useHeap.cpp heap.cpp hash.cpp
 

@@ -118,3 +118,36 @@ unsigned int hashTable::getPrime(int size) {
             return primes[i];
     }
 } 
+
+void hashTable::*getPointer(const string &key, bool *b = NULL) {
+   
+    int temp = findPos(key);
+    if (temp == -1) {
+        *b = false;
+        return NULL;
+    } else {
+        *b = true;
+        return data[i].pv;
+    }
+ 
+}
+
+int hashTable::setPointer(const string &key, void *pv) {
+
+    int temp = findPos(key);
+    if (temp == -1)
+        return 1; //Not in the hashtable
+
+    data[i].pv = pv;
+    return 0; //Success
+}
+
+bool hashTable::remove(const string &key) {
+
+    int temp = findPos(key);
+    if (temp == -1)
+        return false;
+
+    data[i].isDeleted = true;
+    return true;
+}

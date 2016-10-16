@@ -83,9 +83,11 @@ class heap {
             void *voidptr;
         };
         
-        void percolate(int position, string direction);
+        void percolateUp(int position);
+        void percolateDown(int position);
         int position(nodeObject *nodeptr);
-        
+        int locateNodes(int index, string relation);
+
 };
 
 #endif //_HEAP_H
