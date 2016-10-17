@@ -119,7 +119,7 @@ unsigned int hashTable::getPrime(int size) {
     }
 } 
 
-void hashTable::*getPointer(const string &key, bool *b = NULL) {
+void *hashTable::getPointer(const string &key, bool *b) {
    
     int temp = findPos(key);
     if (temp == -1) {
@@ -127,7 +127,7 @@ void hashTable::*getPointer(const string &key, bool *b = NULL) {
         return NULL;
     } else {
         *b = true;
-        return data[i].pv;
+        return data[temp].pv;
     }
  
 }
@@ -138,7 +138,7 @@ int hashTable::setPointer(const string &key, void *pv) {
     if (temp == -1)
         return 1; //Not in the hashtable
 
-    data[i].pv = pv;
+    data[temp].pv = pv;
     return 0; //Success
 }
 
@@ -148,6 +148,7 @@ bool hashTable::remove(const string &key) {
     if (temp == -1)
         return false;
 
-    data[i].isDeleted = true;
+    --filled;
+    data[temp].isDeleted = true;
     return true;
 }
