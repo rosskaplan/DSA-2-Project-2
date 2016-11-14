@@ -104,7 +104,7 @@ bool hashTable::rehash() {
     
     for (int i = 0; i < temp.size(); i++) {
         if ((temp[i].isOccupied == true) && (temp[i].isDeleted==false)) 
-            insert(temp[i].key, NULL);
+            insert(temp[i].key, temp[i].pv);
     }
 } 
 
